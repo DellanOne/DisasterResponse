@@ -1,24 +1,14 @@
 # Disaster Response Pipeline Project
 
-### Installation:
-You will need the standard data science libraries found in the Anaconda distribution of Python. The code should run with no issues using Python versions 3.*.
+### Instructions:
+1. Run the following commands in the project's root directory to set up your database and model.
 
-You will also want to download nltk,pickle,sqlalchemy - directions for this can be found in the text processing portion of the workbook.
+    - To run ETL pipeline that cleans data and stores in database
+        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+    - To run ML pipeline that trains classifier and saves
+        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
-### Project Motivation:
+2. Run the following command in the app's directory to run your web app.
+    `python run.py`
 
-Your project includes a web app where an emergency worker can input a new message and get classification results in several categories. The web app will also display visualizations of the data.
-
-## File Descriptions <a name="files"></a>
-
-The following are the files available in this repository:
-
-* `【Part 1】Project 1 Seattle Airbnb.ipynb` - a notebook of the analysis ,mainly focuses on the dataset of Seattle of Airbnb ,performed following the CRISP-DM process, and which is exported into `【Part 1】Project 1 Seattle Airbnb.html`.
-
-* `【Part 2】Project 1 Boston Airbnb.ipynb` - a notebook of the analysis ,mainly focuses on the dataset of Boston of Airbnb ,performed following the CRISP-DM process, and which is exported into `【Part 2】Project 1 Boston Airbnb.html`.
-
-* `calendar_seattle.csv` and `calendar_boston.csv` - csvs containing **home_id**, **date**, **availability**, and **price** for each home
-
-* `listings_seattle.csv` and `listings_boston.csv` - csvs containing **id**, **listing_url**, **scrape_id**, and other columns for each home
-
-* `reviews_seattle.csv` and `reviews_boston.csv` - csvs containing the **home_id**, **date** of review, **reviewer_id**, **reviewer_name**, and reviewer **comments** for the reviewed stays.
+3. Go to http://0.0.0.0:3001/
